@@ -9,11 +9,11 @@ interface AppCardProps {
 }
 
 const AppCard = ({ word, selectAnswer }: AppCardProps) => {
-  const [correctAnswer, setCorrectAnswer] = useState<boolean | null>(null);
+  const [correctAnswer, setCorrectAnswer] = useState<IPartOfSpeech | null>(null);
 
   const onHandleClick = (answer: IPartOfSpeech) => {
-    if (word.pos === answer) setCorrectAnswer(true);
-    else setCorrectAnswer(false);
+    if (word.pos === answer) setCorrectAnswer(answer);
+    else setCorrectAnswer(answer);
     selectAnswer(word.pos, answer);
   };
 
@@ -39,7 +39,7 @@ const AppCard = ({ word, selectAnswer }: AppCardProps) => {
           <AppButton
             key={pos}
             onClick={() => correctAnswer === null && onHandleClick(IPartOfSpeech[pos])}
-            color={correctAnswer !== null ? (word.pos === IPartOfSpeech[pos] ? "success" : "error") : "primary"}
+            color={correctAnswer === IPartOfSpeech[pos] ? word.pos === IPartOfSpeech[pos] ? 'success' : 'error' : 'primary'}
           >
             {pos}
           </AppButton>
