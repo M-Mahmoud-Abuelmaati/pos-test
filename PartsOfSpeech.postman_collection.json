@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "e1c043d2-e7df-43ff-aef3-c3426947c96f",
+		"name": "PartsOfSpeech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22166783"
+	},
+	"item": [
+		{
+			"name": "Get Words",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/pos",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"finalScore\": 0 // 0 - 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/pos/rank",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pos",
+						"rank"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}

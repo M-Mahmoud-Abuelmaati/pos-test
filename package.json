@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "client:install": "cd client && npm install -f",
+    "client:build": "cd client && npm run build",
+    "client:start": "cd client && npm run preview",
+    "client:dev": "cd client && npm run dev",
+    "client:lint": "cd client && npm run lint",
+    "server:install": "cd server && npm install -f",
+    "server:build": "cd server && npm run build",
+    "server:start": "cd server && npm run start",
+    "server:dev": "cd server && npm run dev",
+    "server:lint": "cd server && npm run lint",
+    "server:format": "cd server && npm run format",
+    "server:prettier": "cd server && npm run prettier"
+  }
+}
